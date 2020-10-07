@@ -1,0 +1,23 @@
+{
+    "name": "openpsa/org-openpsa-slideshow",
+    "type": "midcom-package",
+    "description": "Simple Slideshow/Image Gallery Viewer",
+    "keywords": ["midcom", "gallery", "slideshow"],
+    "homepage": "https://openpsa2.org",
+    "license": "LGPL-2.1-or-later",
+    "authors": [
+        {
+            "name": "Andreas Flack",
+            "email": "flack@contentcontrol-berlin.de",
+            "homepage": "http://www.contentcontrol-berlin.de/"
+        }
+    ],
+    "require": {
+        "openpsa/midcom-core": "dev-main"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}
