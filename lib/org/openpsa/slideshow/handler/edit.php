@@ -36,7 +36,7 @@ class org_openpsa_slideshow_handler_edit extends midcom_baseclasses_components_h
     /**
      * Handler for recreating derived images
      */
-    public function _handler_recreate_folder_thumbnails(array &$data)
+    public function _handler_recreate_folder_thumbnails()
     {
         $mc = midcom_db_topic::new_collector('up', $this->_topic->id);
         if ($subfolder_guids = $mc->get_values('guid')) {
@@ -246,8 +246,7 @@ class org_openpsa_slideshow_handler_edit extends midcom_baseclasses_components_h
             throw new midcom_error('Failed to create attachment: ' . midcom_connection::get_error_string());
         }
         // apply filter for original image
-        $filter_chain = $this->_config->get('original_filter');
-        if (!empty($filter_chain)) {
+        if ($filter_chain = $this->_config->get('original_filter')) {
             $imagefilter = new midcom_helper_imagefilter($attachment);
             $imagefilter->process_chain($filter_chain);
         }
